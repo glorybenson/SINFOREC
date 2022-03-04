@@ -48,6 +48,7 @@
                     </ul>
                 </div>
             </div>
+        </div>
             <div class="col-8">
                 <div class="card pb-4">
                     <form method="POST" class="demo-form" action="{{ route('naissance.registre.post') }}">
