@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <div class="row" data-user="{{ Auth()->user()[ 'email'] }}" data-conn="{{ $link }}">
             <div class="col-4">
                 <div class="card p-3 wizard-form">
@@ -74,7 +75,7 @@
                                                 @error('pay')
                                                 <span class="invalid-feedback" id="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
@@ -91,7 +92,7 @@
                                                 @error('region')
                                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
@@ -108,7 +109,7 @@
                                                 @error('department')
                                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
@@ -125,7 +126,7 @@
                                                 @error('arrondissement')
                                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
@@ -142,7 +143,7 @@
                                                 @error('commune')
                                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
@@ -159,7 +160,7 @@
                                                 @error('centre')
                                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                                </span>
                                                 @enderror
                                             </div>
                                         </div>
@@ -187,7 +188,7 @@
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('description') }}</strong>
-                                            </span>
+                                                </span>
                                                 @endif
                                             </div>
                                             <div class="mb-4">
@@ -197,7 +198,7 @@
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('description') }}</strong>
-                                            </span>
+                                                </span>
                                                 @endif
                                             </div>
                                             <div class="mb-4">
@@ -207,7 +208,7 @@
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('description') }}</strong>
-                                            </span>
+                                                </span>
                                                 @endif
                                             </div>
                                             <div class="mb-4">
