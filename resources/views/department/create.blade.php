@@ -11,7 +11,7 @@
                                 <div class="d-flex align-items-center">
                                     <h5 class="page-title">Dashboard</h5>
                                     <ul class="breadcrumb ml-2">
-                                        <li class="breadcrumb-item"><a href="{{ route('department.index') }}">Departement</a>
+                                        <li class="breadcrumb-item"><a href="{{ route('department.index') }}">Département</a>
                                         </li>
                                         <li class="breadcrumb-item active">Créer un nouveau département</li>
                                     </ul>
@@ -24,10 +24,10 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title float-left">Departement</h4>
+                                    <h4 class="card-title float-left">Département</h4>
                                     <div class="text-right">
                                         <a href="{{ route('department.index') }}" class="btn btn-dark px-3">
-                                            Retour departement</a>
+                                            Retour département</a>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -75,7 +75,7 @@
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary px-4"
                                                 onclick="return confirm('Are you sure you want to submit this form?')">
-                                                Ajout d’un department
+                                                Ajout d’un département
                                             </button>
                                         </div>
                                     </form>

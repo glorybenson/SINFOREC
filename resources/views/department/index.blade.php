@@ -8,7 +8,7 @@
                     <div class="d-flex align-items-center">
                         <h5 class="page-title">Dashboard</h5>
                         <ul class="breadcrumb ml-2">
-                            <li class="breadcrumb-item active">Departement</li>
+                            <li class="breadcrumb-item active">Département</li>
                         </ul>
                     </div>
                 </div>
@@ -19,9 +19,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title float-left">Departement</h4>
+                        <h4 class="card-title float-left">Département</h4>
                         <div class="text-right">
-                            <a href="{{ route('department.create') }}" class="btn btn-dark px-3">Ajout d’un department</a>
+                            <a href="{{ route('department.create') }}" class="btn btn-dark px-3">Ajout d’un département</a>
                         </div>
                     </div>
                     <div class="card-body">

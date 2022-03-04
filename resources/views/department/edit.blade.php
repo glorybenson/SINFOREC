@@ -11,7 +11,7 @@
                                 <div class="d-flex align-items-center">
                                     <h5 class="page-title">Dashboard</h5>
                                     <ul class="breadcrumb ml-2">
-                                        <li class="breadcrumb-item"><a href="{{ route('department.index') }}">Department</a>
+                                        <li class="breadcrumb-item"><a href="{{ route('department.index') }}">Département</a>
                                         </li>
                                         <li class="breadcrumb-item active">Éditer</li>
                                     </ul>
@@ -26,7 +26,7 @@
                                     <h4 class="card-title float-left">Éditer</h4>
                                     <div class="text-right">
                                         <a href="{{ route('department.index') }}" class="btn btn-dark px-3">
-                                            Retour department</a>
+                                            Retour département</a>
                                     </div>
 
                                 </div>

@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="row mb-3">
                                             <label for="description" class="col-md-2 col-form-label text-md-end">
-                                                Department</label>
+                                                Département</label>
                                             @if (isset($departments))
                                                 <div class="col-md-10">
                                                     <select data-live-search="true" data-name="departments" name="departments" id="departments" class="selectpicker w-100 modifiable">
@@ -131,7 +131,7 @@
                                         <div class="float-right">
                                             <button type="submit" class="btn btn-primary px-4"
                                                 onclick="return confirm('Are you sure you want to submit this form?')">
-                                                soumettre le formulaire
+                                                Créer le Centre
                                             </button>
                                         </div>
                                     </form>

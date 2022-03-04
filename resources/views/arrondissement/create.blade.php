@@ -53,7 +53,7 @@
 
                                         <div class="row mb-3">
                                             <label for="description" class="col-md-2 col-form-label text-md-end">
-                                                Department</label>
+                                                Département</label>
                                             <div class="col-md-10">
                                                 @if (isset($department))
                                                     <select data-live-search="true" name="department_id" class="selectpicker w-100"
@@ -74,7 +74,7 @@
                                         <div class="float-right">
                                             <button type="submit" class="btn btn-primary px-4"
                                                 onclick="return confirm('Are you sure you want to submit this form?')">
-                                                Créer la Commune
+                                                Créer l’Arrondissement
                                             </button>
                                         </div>
                                     </form>
