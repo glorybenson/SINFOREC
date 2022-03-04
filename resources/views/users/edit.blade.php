@@ -203,30 +203,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <label for="password" class="col-md-2 col-form-label text-md-end">Mot de
-                                                passe</label>
-
-                                            <div class="col-md-10">
-                                                <input id="password" type="password" class="form-control " name="password"
-                                                       required autocomplete="new-password">
-                                                @if ($errors->has('password'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('password') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="password-confirm"
-                                                   class="col-md-2 col-form-label text-md-end">Confirmer
-                                                Mot de passe</label>
-
-                                            <div class="col-md-10">
-                                                <input id="password-confirm" type="password" class="form-control"
-                                                       name="password_confirmation" required autocomplete="new-password">
-                                            </div>
-                                        </div>
+                                       
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary px-4"
                                                     onclick="return confirm('Are you sure you want to submit this form?')">
