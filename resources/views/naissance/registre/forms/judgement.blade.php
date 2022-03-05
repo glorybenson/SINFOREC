@@ -45,7 +45,7 @@
                     @if (count($regions) == 1)
                         <option value="{{ $regions[0]->region }}">{{ $regions[0]->region }}</option>
                     @else
-                        <option value="" selected>--</option>
+                        <option value="Non" selected>--</option>
                         @foreach ($regions as $item)
                             <option value="{{ $item->region }}">
                                 {{ $item->region }}
