@@ -3,6 +3,9 @@
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li class="menu-title"> <span></span>
+                    @php
+                        $roles = \App\Models\Role::roles_of( \Illuminate\Support\Facades\Auth::user()->roles);
+                    @endphp
                 </li>
             <!-- @if (in_array(1, Auth::user()->roles) || in_array(2, Auth::user()->roles))
                 <li class="{{ request()->is('home') || request()->is('edit-user/*') || request()->is('create-user')? 'active active-now': '' }}">
@@ -21,7 +24,7 @@
 @endif
                 -->
 
-                @if (in_array(1, Auth::user()->roles) || in_array(5, Auth::user()->roles))
+                @if ( $roles->has_admin)
                     <li class="">
                         <a href="#"><i class="feather-users"></i>
                             <span class="shape1"></span><span class="shape2"></span>
@@ -37,7 +40,8 @@
                         </ul>
                     </li>
                 @endif
-                @if (in_array(1, Auth::user()->roles) || in_array(5, Auth::user()->roles))
+
+                @if ( $roles->has_naissance)
                     <li class="">
                         <a href="#"><i class="feather-gift"></i>
                             <span class="shape1"></span><span class="shape2"></span>
@@ -51,7 +55,7 @@
                     </li>
                 @endif
 
-                @if (in_array(1, Auth::user()->roles) || in_array(5, Auth::user()->roles))
+                @if ( $roles->has_mariage)
                     <li class="">
                         <a href="#"><i class="feather-link"></i>
                             <span class="shape1"></span><span class="shape2"></span>
@@ -63,7 +67,8 @@
                         </ul>
                     </li>
                 @endif
-                @if (in_array(1, Auth::user()->roles) || in_array(5, Auth::user()->roles))
+
+                @if ( $roles->has_deces)
                     <li class="">
                         <a href="#"><i class="feather-users"></i>
                             <span class="shape1"></span><span class="shape2"></span>
@@ -75,7 +80,8 @@
                         </ul>
                     </li>
                 @endif
-                @if (in_array(1, Auth::user()->roles) || in_array(5, Auth::user()->roles))
+
+                @if ( $roles->has_cert)
                     <li class="">
                         <a href="#"><i class="feather-file-text"></i>
                             <span class="shape1"></span><span class="shape2"></span>
@@ -93,15 +99,14 @@
                     </li>
                 @endif
 
-                @if (in_array(1, Auth::user()->roles) || in_array(3, Auth::user()->roles))
+                @if ( $roles->has_rapport)
                     <li class="">
                         <a href=""><i class="feather-book"></i>
                             <span class="shape1"></span><span class="shape2"></span>
                             <span> Rapports</span></a>
                     </li>
                 @endif
-
-                @if (in_array(1, Auth::user()->roles) || in_array(3, Auth::user()->roles))
+                @if ( $roles->has_tableau)
                     <li class="">
                         <a href=""><i class="feather-lock"></i>
                             <span class="shape1"></span><span class="shape2"></span>

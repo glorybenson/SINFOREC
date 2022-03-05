@@ -53,9 +53,7 @@ class RegionsController extends Controller
         Util::fill( $region, [ 'description', 'pay_id'], $request);
         $region->created_by = Auth::user()[ 'id'];
 
-        Util::try_save( $region);
-
-        return redirect( 'regions')->with('success', 'Région créée avec succès');
+        return Util::try_save( $region, null, [ 'sender' => 'Region', 'redirect_url' => 'regions', 'success' => 'Région créée avec succès']);
     }
 
     /**
@@ -67,7 +65,7 @@ class RegionsController extends Controller
     public function show($id)
     {
         $region = Region::find($id);
-        $pay_id = $region->get( 'pays_id')[ 0]->pay_id;
+        $pay_id = $region->get( 'pay_id')[ 0]->pay_id;
         $pays_description = Pay::find( $pay_id)->description;
 
         return view('regions.show', ['region' => $region, 'pays_description' => $pays_description]);
@@ -83,6 +81,7 @@ class RegionsController extends Controller
     {
         $countries = Util::get_entity( 'pays');
         $region = Region::find($id);
+
         return view('regions.edit', ['region' => $region, 'countries' => $countries]);
     }
 

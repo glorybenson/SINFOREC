@@ -50,19 +50,8 @@
                                             <div class="col-md-10">
                                                 <select class="selectpicker w-100" data-live-search="true" name="pay_id"
                                                     required aria-label=".form-select-lg example">
-                                                    @php
-                                                        $single_country_selection = "";
-                                                        if( isset( $countries))
-                                                        {
-                                                            if( count( $countries) == 1)
-                                                                $single_country_selection = "selected";
-                                                            else
-                                                               echo  "<option selected>--</option>";
-                                                        }
-                                                    @endphp
                                                     @for( $i = 0; $i < count( $countries); ++$i)
-                                                        <option value="{{ $countries[ $i]->id }}"
-                                                            {{ $i == 0 ?  $single_country_selection : '' }} >{{ $countries[ $i]->description }}</option>
+                                                        <option value="{{ $countries[ $i]->id }}">{{ $countries[ $i]->description }}</option>
                                                     @endfor
                                                 </select>
                                                 @if ( $errors->any())

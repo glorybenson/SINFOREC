@@ -31,6 +31,8 @@
                                 <thead class="thead-light">
                                     <th>La description</th>
                                     <th>Department</th>
+                                    <th>Créé par</th>
+                                    <th>Créé sur</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
@@ -40,6 +42,10 @@
                                                 {{ $item->description }}
                                             </td>
                                             <td>{{ \App\Models\Department::find( $item->department_id)->description }}</td>
+                                            <td>
+                                                {{ \App\Models\User::find( $item->created_by)->first_name }}
+                                            </td>
+                                            <td>{{ $item->created_at }}</td>
                                             <td>
                                                 <a class="text-dark"
                                                     href="{{ route('arrondissement.show', ['id' => $item->id, 'rt' => time()]) }}"><i

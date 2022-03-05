@@ -28,6 +28,8 @@
                             <table class="table mb-0 table-striped border-0 data-table" id="datatable">
                                 <thead class="thead-light">
                                     <th>La description</th>
+                                    <th>Créé par</th>
+                                    <th>Créé sur</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
@@ -35,6 +37,12 @@
                                         <tr>
                                             <td>
                                                 {{ $pay->description }}
+                                            </td>
+                                            <td>
+                                                {{ \App\Models\User::find( $pay->created_by)->first_name }}
+                                            </td>
+                                            <td>
+                                                {{ $pay->created_at }}
                                             </td>
                                             <td>
                                                 <a class="text-dark"

@@ -6302,8 +6302,8 @@ input:checked+.slider:before {
 }
 
 .parsley-errors-list {
-    padding-left: 0px;
-    margin-left: 0px;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .wizard-form li a {

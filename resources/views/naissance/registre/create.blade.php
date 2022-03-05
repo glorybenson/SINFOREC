@@ -25,7 +25,7 @@
                             </div>
                             <ul style="display: block;" id="wizard-ul">
                                 <li>
-                                    <p><a id="wizard-navs-0" href="#">1 Zone Gérographique</a></p>
+                                    <p><a class="flow-control" id="wizard-navs-0" href="#">1 Zone Gérographique</a></p>
                                 </li>
                                 <li>
                                     <p><a id="wizard-navs-1" href="#">2 Renseignement sur l’enfant</a></p>
@@ -219,6 +219,16 @@
                                                 <label for="child_info-birth_time">Heure de Naissance</label>
                                                 <input id="child_info-birth_time" placeholder="Select date" type="time" name="child_info-birth_time" class="form-control serializable" tabindex="5" data-parsley-errors-container="#invalid-feedback12" required >
                                                 <span class="feedback-new" id="invalid-feedback12" role="alert"></span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="child_info-place_of_birth">Lieu de Naissance</label>
+                                                <input id="child_info-place_of_birth" type="text" class="form-control serializable" name="child_info-place_of_birth" tabindex="3" data-parsley-errors-container="#invalid-feedback10" required >
+                                                <span class="feedback-new" id="invalid-feedback10" role="alert"></span>
+                                                @if ($errors->has('description'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                                @endif
                                             </div>
                                             <div class="mb-4">
                                                 <label for="child_info-gender">Sexe</label>
@@ -420,8 +430,18 @@
                                                 @endif
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="declarant_info-profession">Profession du déclarant </label>
-                                                <input id="declarant_info-profession" type="number" class="form-control" name="declarant_info-profession" tabindex="5" data-parsley-errors-container="#invalid-feedback32" required >
+                                                <label for="declarant_info-profession" class="required">Profession du déclarant </label>
+                                                <input id="declarant_info-profession" type="text" class="form-control" name="declarant_info-profession" tabindex="5" data-parsley-errors-container="#invalid-feedback32" required >
+                                                <span class="feedback-new" id="invalid-feedback32" role="alert"></span>
+                                                @if ($errors->has('description'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                                @endif
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="declarant_info-cin" class="required">C.I.N</label>
+                                                <input id="declarant_info-cin" type="number" class="form-control" name="declarant_info-cin" tabindex="5" data-parsley-errors-container="#invalid-feedback32" required >
                                                 <span class="feedback-new" id="invalid-feedback32" role="alert"></span>
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">

@@ -30,6 +30,7 @@ Route::middleware( 'auth')->group( function () {
     Route::get('/naissance/registre/create', [App\Http\Controllers\Add\AddController::class, 'create'])->name('naissance.registre.create');
     Route::post('/naissance/registre/create', [App\Http\Controllers\Add\AddController::class, 'store'])->name('naissance.registre.post');
     Route::get('/naissance/registre/{id}/detail', [App\Http\Controllers\Add\AddController::class, 'show'])->name('naissance.registre.show');
+    Route::get('/naissance/registre/{id}/delete', [App\Http\Controllers\Add\AddController::class, 'destroy'])->name('naissance.registre.delete');
 
     Route::get( '/naissance/registre/geographical_zone', [FormController::class, 'geographical_zone'])->name( 'naissance.forms.geographical_zone');
     Route::get( '/naissance/registre/child_info', [FormController::class, 'child_info'])->name( 'naissance.forms.child_info');
@@ -40,8 +41,6 @@ Route::middleware( 'auth')->group( function () {
 
     Route::get('/registre/{id}/edit', [App\Http\Controllers\Add\AddController::class, 'edit'])->name('registre.edit');
     Route::post('/registre/{id}/edit', [App\Http\Controllers\Add\AddController::class, 'update'])->name('registre.edit.post');
-
-    Route::get('/registre/{id}/delete', [App\Http\Controllers\Add\AddController::class, 'destroy'])->name('registre.delete');
 
 
     Route::get('/centre', [App\Http\Controllers\Centre\CentreController::class, 'index'])->name('centre');

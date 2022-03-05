@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @php
+
+    @endphp
     <div class="row">
         <div class="col-md-10 mx-auto">
             <div class="mt-3">
@@ -32,13 +35,13 @@
                                 </div>
                                 <div class="card-body">
                                     <form method="POST"
-                                        action="{{ route('centre.edit.post', [ 'id' => $centre->id]) }}">
+                                        action="{{ route('centre.edit.post', [ 'id' => $editingCentre->id]) }}">
                                         @csrf
                                         <div class="row mb-3">
                                             <label for="description"
                                                 class="col-md-2 col-form-label text-md-end">Description</label>
                                             <div class="col-md-10">
-                                                <input value="{{ $centre->description }}" class="form-control"
+                                                <input value="{{ $editingCentre->description }}" class="form-control"
                                                     id="description" name="description" required>
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">

@@ -52,23 +52,19 @@
                                                 <div class="col-md-10">
                                                     <select data-live-search="true" data-name="regions" name="regions"
                                                             class="selectpicker w-100 modifiable" id="regions">
-                                                        @if(count($regions) === 1)
-                                                            <option value="{{ ((object)$regions[0])->id }}">{{ ((object)$regions[0])->description }}</option>
-                                                        @else
-                                                            <option value="" selected>--</option>
-                                                            @foreach ($regions as $item)
-                                                                <option value="{{ ((object)$item)->id }}">
-                                                                    {{ ((object)$item)->description }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                        <option value="" selected>--</option>
+                                                        @foreach ($regions as $item)
+                                                            <option value="{{ ((object)$item)->id }}">
+                                                                {{ ((object)$item)->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                     @if ($errors->has('regions'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('regions') }}</strong>
                                                         </span>
                                                     @endif
-                                                    @endif
                                                 </div>
+                                            @endif
                                         </div>
                                         <div class="row mb-3">
                                             <label for="description" class="col-md-2 col-form-label text-md-end">
@@ -76,16 +72,11 @@
                                             @if (isset($departments))
                                                 <div class="col-md-10">
                                                     <select data-live-search="true" data-name="departments" name="departments" id="departments" class="selectpicker w-100 modifiable">
-                                                        @if(count($departments) === 1)
-                                                            <option value="{{ ((object)$departments[0])->id }}">
-                                                                {{ ((object)$departments[0])->description }}</option>
-                                                        @else
-                                                            <option value="" selected>--</option>
-                                                            @foreach ($departments as $item)
-                                                                <option value="{{ ((object)$item)->id }}">
-                                                                    {{ ((object)$item)->description }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                        <option value="" selected>--</option>
+                                                        @foreach ($departments as $item)
+                                                            <option value="{{ ((object)$item)->id }}">
+                                                                {{ ((object)$item)->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                     @if ($errors->has('departments'))
                                                         <span class="invalid-feedback" role="alert">
@@ -102,16 +93,11 @@
                                                 <div class="col-md-10">
                                                     <select data-live-search="true" data-name="arrondissements" name="arrondissements"
                                                             class="selectpicker w-100 modifiable" id="arrondissements">
-                                                        @if(count($arrondissements) === 1)
-                                                            <option value="{{ ((object)$arrondissements[0])->id }}">
-                                                                {{ ((object)$arrondissements[0])->description }}</option>
-                                                        @else
-                                                            <option selected>--</option>
-                                                            @foreach ($arrondissements as $item)
-                                                                <option value="{{ ((object)$item)->id }}">
-                                                                    {{ ((object)$item)->description }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                        <option value="" selected>--</option>
+                                                        @foreach ($arrondissements as $item)
+                                                            <option value="{{ ((object)$item)->id }}">
+                                                                {{ ((object)$item)->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                     @if ($errors->has('arrondissements'))
                                                         <span class="invalid-feedback" role="alert">
@@ -128,24 +114,19 @@
                                                 <div class="col-md-10">
                                                     <select data-live-search="true" data-name="communes" name="communes"
                                                             class="selectpicker w-100 modifiable" id="communes">
-                                                        @if(count($communes) === 1)
-                                                            <option value="{{ ((object)$communes[0])->id }}">
-                                                                {{ ((object)$communes[0])->description }}</option>
-                                                        @else
-                                                            <option value="" selected>--</option>
-                                                            @foreach ($communes as $item)
-                                                                <option value="{{ ((object)$item)->id }}">
-                                                                    {{ ((object)$item)->description }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                        <option value="" selected>--</option>
+                                                        @foreach ($communes as $item)
+                                                            <option value="{{ ((object)$item)->id }}">
+                                                                {{ ((object)$item)->description }}</option>
+                                                        @endforeach
                                                     </select>
-                                                    @if ($errors->has('commune'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('communes') }}</strong>
-                                                        </span>
-                                                    @endif
-                                                    @endif
-                                                </div>
+                                                @if ($errors->has('commune'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('communes') }}</strong>
+                                                    </span>
+                                                @endif
+                                            @endif
+                                            </div>
                                         </div>
                                         <div class="float-right">
                                             <button type="submit" class="btn btn-primary px-4"

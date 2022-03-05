@@ -75,10 +75,12 @@
 {{--                                                    class="feather-eye"></i></a>--}}
 {{--                                            <a href="{{ route('add.edit', ['id' => $item->id]) }}"--}}
 {{--                                               class="mx-2 text-dark"><i class="feather-edit"></i></a>--}}
-{{--                                            <a class="text-dark"--}}
-{{--                                               onclick="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');"--}}
-{{--                                               href="{{ route('add.delete', ['id' => $item->id]) }}"><i--}}
-{{--                                                    class="feather-trash"></i></a>--}}
+                                            <a class="text-dark"
+                                               onclick="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');"
+                                               href="
+                                                        {{ route('naissance.registre.delete', ['id' => $item->id]) }}
+                                                   "><i
+                                                    class="feather-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -129,8 +129,11 @@ class HomeController extends Controller
 
     public function edit_user( $id)
     {
+        $shell = new \stdClass();
+        $binding = Util::load( $shell);
         $user = DB::table( 'users')->where( 'id', $id)->get()[ 0];
-        return view( 'users.edit', collect([ 'user' => $user]));
+
+        return view( 'users.edit', array_merge( [ "user" => $user], $binding));
     }
 
     public function update_user( Request $request)

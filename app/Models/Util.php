@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class Util
 {
@@ -23,7 +24,7 @@ class Util
         return;
     }
 
-    public static function try_save( Model $model, $stash_fn = null): void {
+    public static function try_save( Model $model, $stash_fn = null, $params = []) {
         try {
             if( $stash_fn != null)
                 $model->$stash_fn();
@@ -32,9 +33,13 @@ class Util
         }
         catch ( QueryException $exception)
         {
-            back()->with('error', 'l\'entrée existe déjà');
-            return;
+            return back()->with('error', ErrorLookup::log( $exception->getCode(), $params));
         }
+
+        if( $params[ 'redirect_url'] != null)
+            return redirect( $params[ 'redirect_url'])->with( 'success', $params[ 'success']);
+
+        return null;
     }
 
     public static function get_entity( $table_name)
@@ -82,8 +87,10 @@ class Util
         Util::pack( Util::ARRONDISSEMENTS, Arrondissement::class, $shell);
         Util::pack( Util::COMMUNES, Communes::class, $shell);
 
-        $centre = DB::select( 'SELECT centre.*, communes.id as commune_id FROM communes INNER JOIN centre ON
-                                      communes.description=centre.communes and communes.created_by=centre.created_by');
+        $centre = DB::select( 'SELECT centre.id, centre.description, communes.description as communes, department.description as departments,
+                                      regions.description as regions, arrondissement.description as arrondissements, communes.id as commune_id FROM communes
+                                      INNER JOIN centre ON centre.communes=communes.id INNER JOIN department ON centre.departments=department.id
+                                      INNER JOIN regions ON centre.regions=regions.id INNER JOIN arrondissement ON centre.arrondissements=arrondissement.id');
 
         Util::pack_ext( Util::CENTRE, $centre, $shell, (new Centre())->getFillable());
 

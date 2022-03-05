@@ -27,8 +27,10 @@ class CentreController extends Controller
 
     public function index()
     {
-        $centres = Centre::all();
-        return view('centre.index', ['centres' => $centres]);
+        $shell = new \stdClass();
+        $binding = Util::load( $shell);
+
+        return view('centre.index', $binding);
     }
 
     /**
@@ -64,9 +66,8 @@ class CentreController extends Controller
         Util::fill( $centres, [ 'arrondissements', 'communes', 'regions', 'description', 'departments'], $request);
         $centres->created_by = Auth::user()[ 'id'];
 
-        Util::try_save( $centres);
-
-        return redirect( 'centre')->with('success', 'Centre créé avec succès');
+        return Util::try_save( $centres, null, [ 'sender' => 'Centres', 'redirect_url' => 'centre',
+            'success' => 'Centre créée avec succès']);
     }
 
     /**
@@ -77,8 +78,16 @@ class CentreController extends Controller
      */
     public function show($id)
     {
-        $centre = Centre::find($id);
-        return view('centre.show', ['centre' => $centre]);
+        $shell = new \stdClass();
+        $binding = Util::load( $shell);
+
+        $binding[ 'centre'] = DB::select( 'SELECT centre.id, centre.description, communes.description as communes, department.description as departments,
+                                      regions.description as regions, arrondissement.description as arrondissements, communes.id as commune_id FROM communes
+                                      INNER JOIN centre ON centre.communes=communes.id INNER JOIN department ON centre.departments=department.id
+                                      INNER JOIN regions ON centre.regions=regions.id INNER JOIN arrondissement ON centre.arrondissements=arrondissement.id'
+                                      . ' WHERE centre.id=?', [$id])[ 0];
+
+        return view('centre.show', $binding);
     }
 
     /**
@@ -87,10 +96,12 @@ class CentreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( $id)
     {
         $shell = new \stdClass();
-        $binding = $this->load( $shell);
+        $binding = Util::load( $shell);
+
+        $binding[ 'editingCentre'] = Centre::find( $id);
 
         return view('centre.edit', $binding);
     }

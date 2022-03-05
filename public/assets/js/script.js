@@ -289,6 +289,8 @@
                     break;
             }
         }
-        window.onload = viewOpenNav;
+
+        // window.onload = viewOpenNav;
+
     })();
 })(jQuery);

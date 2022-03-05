@@ -30,6 +30,8 @@
                                 <thead class="thead-light">
                                     <th>La description</th>
                                     <th>Region</th>
+                                    <th>Créé par</th>
+                                    <th>Créé sur</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
@@ -38,7 +40,13 @@
                                             <td>
                                                 {{ $item->description }}
                                             </td>
-                                            <td>{{ \App\Models\Region::find( $item->region_id)->description }}</td>
+                                            <td>{{ \App\Models\Department::find( $item->region_id)->description }}</td>
+                                            <td>
+                                                {{ \App\Models\User::find( $item->created_by)->first_name }}
+                                            </td>
+                                            <td>
+                                            {{ $item->created_at }}
+                                            </td>
                                             <td>
                                                 <a class="text-dark"
                                                     href="{{ route('department.show', ['id' => $item->id, 'rt' => time()]) }}"><i

@@ -31,4 +31,12 @@
         color: black !important;
     }
 
+    #wizard-ul a{
+        color: grey;
+    }
+
+    label[for="child_info-health_training"]::after{
+        content: "" !important;
+    }
+
 </style>

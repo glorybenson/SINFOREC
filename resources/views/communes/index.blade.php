@@ -30,6 +30,8 @@
                                 <thead class="thead-light">
                                     <th>La description</th>
                                     <th>Arrondissement</th>
+                                    <th>Créé par</th>
+                                    <th>Créé sur</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
@@ -39,6 +41,10 @@
                                                 {{$item->description}}
                                             </td>
                                             <td>{{ \App\Models\Arrondissement::find( $item->arrondissement_id)->description }}</td>
+                                            <td>
+                                                {{ \App\Models\User::find( $item->created_by)->first_name }}
+                                            </td>
+                                            <td>{{ $item->created_at }}</td>
                                             <td>
                                                 <a class="text-dark"
                                                     href="{{ route('communes.show', ['id' => $item->id, 'rt' => time()]) }}"><i

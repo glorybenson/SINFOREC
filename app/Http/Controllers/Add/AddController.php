@@ -127,6 +127,6 @@ class AddController extends Controller
     public function destroy($id)
     {
         Add::destroy($id);
-        return redirect()->route('registre.index')->with('success', 'Supprimée avec succès');
+        return redirect()->route('naissance.registre')->with('success', 'Supprimée avec succès');
     }
 }

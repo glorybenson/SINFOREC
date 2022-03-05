@@ -9,5 +9,5 @@ class Pay extends Model
 {
     use HasFactory;
     protected $table = 'pays';
-    protected $fillable = [ 'id', 'description'];
+    protected $fillable = [ 'id', 'description', 'created_by'];
 }

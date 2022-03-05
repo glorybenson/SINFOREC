@@ -27,17 +27,21 @@
                         <div class="table-responsive">
                             <table class="table mb-0 table-striped border-0 data-table" id="datatable">
                                 <thead class="thead-light">
-                                    <th>Pays</th>
                                     <th>La description</th>
+                                    <th>Pays</th>
+                                    <th>Créé par</th>
+                                    <th>Créé sur</th>
                                     <th>Action</th>
                                 </thead>
                                         @foreach ( $regions as $item)
-                                            {{--@php
-                                                dd( $pays->where( 'id', $item->pay_id)[ 0]->description);
-                                            @endphp--}}
                                             <tr>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ \App\Models\Pay::find( $item->pay_id)->description }}</td>
+                                                <td>
+                                                    {{ \App\Models\User::find( $item->created_by)->first_name }}
+                                                </td>
+                                                <td>
+                                                {{ $item->created_at }}
                                                 <td>
                                                     <a
                                                         href="{{ route('region.show', ['id' => $item->id, 'rt' => time()]) }}"><i

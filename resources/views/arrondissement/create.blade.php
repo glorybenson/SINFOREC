@@ -58,14 +58,10 @@
                                                 @if (isset($department))
                                                     <select data-live-search="true" name="department_id" class="selectpicker w-100"
                                                         id="region">
-                                                        @if (count($department) == 1)
-                                                            <option value="{{ $department[0]->id }}">{{ $department[0]->description }}</option>
-                                                        @else
-                                                            <option value="" selected>--</option>
-                                                            @foreach ($department as $item)
-                                                                <option value="{{ $item->id }}">{{ $item->description }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                        <option value="" selected>--</option>
+                                                        @foreach ($department as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                     @if ($errors->has('department_id'))
                                                         <span class="invalid-feedback" role="alert">

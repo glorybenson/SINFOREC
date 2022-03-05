@@ -27,10 +27,12 @@
         // createCenterAutocomplete();
         setupDraft();
 
-        if( location.pathname.indexOf( '/centre/create') !== -1 || location.pathname.indexOf( 'naissance/registre/create') !== -1)
+        if( location.pathname.indexOf( '/centre/create') !== -1
+            || location.pathname.indexOf( 'naissance/registre/create') !== -1)
             filterHierarchy( createDropdown);
-        if( location.pathname.indexOf( 'create-user') !== -1)
-            filterHierarchy( createMultipleSelectDropdown)
+
+        /*if( location.pathname.indexOf( 'create-user') !== -1 || location.pathname.indexOf( 'edit-user') !== -1)
+            filterHierarchy( createMultipleSelectDropdown)*/
 
         annotateRequired();
         judgementChange();
@@ -183,7 +185,7 @@
 
                 optionID = nextFiller[ 0].id;
 
-                const dropdown = dropdownCreator(  $( `.modifiable [data-name*="${nextName}"]`), nextName, nextFiller);
+                const dropdown = dropdownCreator(  $( `.modifiable [data-name*="${nextName}"]`), nextFiller);
                 dropdown?.on( 'change', function () {
                     onSelectionChanged( $( this), parent, kit, routes, dropdownCreator);
                 });
@@ -224,14 +226,16 @@
             if( lastFieldMatch.length === 0)
                 return;
 
-            const optionLabel = lastFieldMatch[ 0][ 'description'];
-            lastField.val( optionLabel);
-            const element = lastField.parent().find( '.filter-option-inner-inner').get( 0);
-            if( element != null)
-                element.textContent = optionLabel;
+            // [ lastFieldMatch[ 0]].forEach( each => console.log( each));
+            createDropdown( lastField, [ lastFieldMatch[ 0]]);
+            // const optionLabel = lastFieldMatch[ 0][ 'description'];
+            // lastField.val( optionLabel);
+            // const element = lastField.parent().find( '.filter-option-inner-inner').get( 0);
+            // if( element != null)
+            //     element.textContent = optionLabel;
         }
 
-        function createDropdown( target, name, filler) {
+        function createDropdown( target, filler) {
             const dropdown = $( '<select/>', { 'class': 'selectpicker'});
             if( target == null || target.get( 0) == null)
                 return null;
@@ -241,8 +245,8 @@
             dropdown.append( $( '<option>--</option>'));
             filler.forEach( function ( each, index) {
                 const option = $( '<option/>');
-                if( index === 0)
-                    option.attr( 'selected', 'true');
+                // if( index === 0)
+                //     option.attr( 'selected', 'true');
                 option.attr( 'value', each[ 'id']);
                 option.html( each[ 'description']);
                 dropdown.append( option);
@@ -253,7 +257,7 @@
             return dropdown;
         }
 
-        function createMultipleSelectDropdown( target, name, filler) {
+        function createMultipleSelectDropdown( target, filler) {
             const dropdown = $( '<select/>');
             if( target == null || target.get( 0) == null)
                 return null;
@@ -294,7 +298,7 @@
             $('#judgement-judgement').change(
                 function (){
                     const el = $('.removable');
-                    if($(this).val() === 'Oui'){
+                    if($(this).val() === 'Non'){
                         $(el).each((index, element) => {
                             $(element).parent().hide();
                             $(element).removeAttr('required');
