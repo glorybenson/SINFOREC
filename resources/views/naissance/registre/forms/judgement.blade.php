@@ -11,8 +11,8 @@
         <div class="col-md-10 required">
             <select id="judgement-judgement" data-live-search="true" name="judgement-judgement" class="selectpicker w-100 serializable" required tabindex="1">
                 <option value="" selected>---</option>
-                <option value="Oui">Oui</option>
-                <option value="Non">Non</option>
+                <option value="Non">Oui</option>
+                <option value="Oui">Non</option>
             </select>
         </div>
     </div>
@@ -45,7 +45,7 @@
                     @if (count($regions) == 1)
                         <option value="{{ $regions[0]->region }}">{{ $regions[0]->region }}</option>
                     @else
-                        <option value="Non" selected>--</option>
+                        <option value="" selected>--</option>
                         @foreach ($regions as $item)
                             <option value="{{ $item->region }}">
                                 {{ $item->region }}
