@@ -52,8 +52,6 @@ class PaysController extends Controller
         $pay->created_by = Auth::user()[ 'id'];
 
         return Util::try_save( $pay, null, [ 'sender' => 'Pays', 'redirect_url' => 'pays', 'success' => 'Pays créé avec succès']);
-
-        return redirect( 'pays')->with('success', 'De nouveaux pays ont été ajoutés');
     }
 
     /**
