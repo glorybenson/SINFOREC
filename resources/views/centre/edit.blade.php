@@ -38,7 +38,7 @@
                                             <label for="description"
                                                 class="col-md-2 col-form-label text-md-end">Description</label>
                                             <div class="col-md-10">
-                                                <input value="{{ $centre->description }}" class="form-control"
+                                                <input value="{{ $editingCentre->description }}" class="form-control"
                                                     id="description" name="description" required>
                                                 @if ($errors->has('description'))
                                                     <span class="invalid-feedback" role="alert">
