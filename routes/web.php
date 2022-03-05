@@ -87,6 +87,7 @@ Route::middleware( 'auth')->group( function () {
 
 //User Routes
     Route::get('/edit-user/{id}', [App\Http\Controllers\HomeController::class, 'edit_user'])->name('edit.user');
+    Route::get('/view-user/{id}', [App\Http\Controllers\HomeController::class, 'edit_user'])->name('view.user');
     Route::post('/edit-user/{id}/', [App\Http\Controllers\HomeController::class, 'update_user'])->name('edit.user.post');
 
 //Route::match(['get', 'post'], '/edit-user/{id}', [App\Http\Controllers\HomeController::class, 'edit_user'])->name('edit.user');

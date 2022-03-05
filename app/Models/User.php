@@ -48,9 +48,16 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
+   
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'roles' => 'array'
+        'roles' => 'array',
+        'pays' => 'array',
+        'regions' => 'array',
+        'departments' => 'array',
+        'arrondissements' => 'array',
+        'communes' => 'array',
+        'centres' => 'array',
     ];
 
 

@@ -30,7 +30,7 @@
         if( location.pathname.indexOf( '/centre/create') !== -1
             || location.pathname.indexOf( 'naissance/registre/create') !== -1)
             filterHierarchy( createDropdown);
-        if( location.pathname.indexOf( 'create-user') !== -1 || location.pathname.indexOf( 'edit-user') !== -1)
+        if( location.pathname.indexOf( 'create-user2') !== -1 || location.pathname.indexOf( 'edit-user') !== -1)
             filterHierarchy( createMultipleSelectDropdown)
 
         annotateRequired();
