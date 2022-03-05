@@ -11,7 +11,7 @@
                                 <div class="d-flex align-items-center">
                                     <h5 class="page-title">Dashboard</h5>
                                     <ul class="breadcrumb ml-2">
-                                        <li class="breadcrumb-item"><a href="{{ route('arrondissement.index') }}">Des détails</a>
+                                        <li class="breadcrumb-item"><a href="{{ route('arrondissements.index') }}">Des détails</a>
                                         </li>
                                         <li class="breadcrumb-item active">{{ $arrondissement->description }}</li>
                                     </ul>
