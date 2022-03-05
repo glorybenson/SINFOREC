@@ -225,13 +225,13 @@
             if( lastFieldMatch.length === 0)
                 return;
 
-            // [ lastFieldMatch[ 0]].forEach( each => console.log( each));
+            [ lastFieldMatch[ 0]].forEach( each => console.log( each));
             createDropdown( lastField, [ lastFieldMatch[ 0]]);
-            // const optionLabel = lastFieldMatch[ 0][ 'description'];
-            // lastField.val( optionLabel);
-            // const element = lastField.parent().find( '.filter-option-inner-inner').get( 0);
-            // if( element != null)
-            //     element.textContent = optionLabel;
+            const optionLabel = lastFieldMatch[ 0][ 'description'];
+            lastField.val( optionLabel);
+            const element = lastField.parent().find( '.filter-option-inner-inner').get( 0);
+            if( element != null)
+                 element.textContent = optionLabel;
         }
 
         function createDropdown( target, filler) {
@@ -244,8 +244,8 @@
             dropdown.append( $( '<option>--</option>'));
             filler.forEach( function ( each, index) {
                 const option = $( '<option/>');
-                // if( index === 0)
-                //     option.attr( 'selected', 'true');
+                if( index === 0)
+                     option.attr( 'selected', 'true');
                 option.attr( 'value', each[ 'id']);
                 option.html( each[ 'description']);
                 dropdown.append( option);
