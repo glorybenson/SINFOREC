@@ -49,7 +49,7 @@
                                             <div class="col-md-7">
                                                 {{ $department_description }}
                                             </div>
-                                        </div>department
+                                        </div>
                                     </div>
                                 </div>
                             </div>
