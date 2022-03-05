@@ -11,8 +11,8 @@
         <div class="col-md-10 required">
             <select id="judgement-judgement" data-live-search="true" name="judgement-judgement" class="selectpicker w-100 serializable" required tabindex="1">
                 <option value="" selected>---</option>
-                <option value="Oui">Oui</option>
-                <option value="Non">Non</option>
+                <option value="Oui">Non</option>
+                <option value="Non">Oui</option>
             </select>
         </div>
     </div>
