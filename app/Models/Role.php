@@ -12,7 +12,7 @@ class Role extends Model
 
     public static $roles = [
         "2" => "Administration",
-        "3" => "naissance",
+        "3" => "Centres",
         "4" => "Mariage",
         "5" => "Décès",
         "6" => "Certificat De",
