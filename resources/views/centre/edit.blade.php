@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="card-body">
                                     <form method="POST"
-                                        action="{{ route('centre.edit.post', [ 'id' => $centre->id]) }}">
+                                    action="{{ route('centre.edit.post', [ 'id' => $editingCentre->id]) }}">
                                         @csrf
                                         <div class="row mb-3">
                                             <label for="description"
