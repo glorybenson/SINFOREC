@@ -27,8 +27,8 @@
                         <div class="table-responsive">
                             <table class="table mb-0 table-striped border-0 data-table" id="datatable">
                                 <thead class="thead-light">
-                                    <th>Pays</th>
                                     <th>La description</th>
+                                    <th>Pays</th>
                                     <th>Créé par</th>
                                     <th>Créé sur</th>
                                     <th>Action</th>
