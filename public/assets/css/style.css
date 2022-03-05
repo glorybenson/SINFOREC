@@ -6307,7 +6307,7 @@ input:checked+.slider:before {
 }
 
 .wizard-form li a {
-    font-size: 22px;
+    /* font-size: 22px; */
     color: black;
 }
 
