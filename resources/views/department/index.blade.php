@@ -40,7 +40,7 @@
                                             <td>
                                                 {{ $item->description }}
                                             </td>
-                                            
+                                            <td>{{ \App\Models\Department::find( $item->region_id)->description }}</td>
                                             <td>
                                                 {{ \App\Models\User::find( $item->created_by)->first_name }}
                                             </td>
