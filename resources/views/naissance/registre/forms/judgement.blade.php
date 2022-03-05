@@ -10,7 +10,7 @@
         <label for="judgement-judgement" class="col-md-2 col-form-label text-md-end required">Jugement</label>
         <div class="col-md-10 required">
             <select id="judgement-judgement" data-live-search="true" name="judgement-judgement" class="selectpicker w-100 serializable" required tabindex="1">
-                <option value="Non" selected>---</option>
+                <option value="" selected>---</option>
                 <option value="Oui">Oui</option>
                 <option value="Non">Non</option>
             </select>
