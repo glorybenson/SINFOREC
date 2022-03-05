@@ -36,7 +36,7 @@
                                         @foreach ( $regions as $item)
                                             <tr>
                                                 <td>{{ $item->description }}</td>
-                                                <td>{{ \App\Models\Region::find( $item->pay_id)->description }}</td>
+                                                <td>{{ \App\Models\Pay::find( $item->pay_id)->description }}</td>
                                                 <td>
                                                     {{ \App\Models\User::find( $item->created_by)->first_name }}
                                                 </td>
