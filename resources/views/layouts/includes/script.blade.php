@@ -24,7 +24,7 @@
     $(document).ready(function() {
         $('select').selectpicker();
         $('table').DataTable();
-        // createCenterAutocomplete();
+        createCenterAutocomplete();
         setupDraft();
 
         if( location.pathname.indexOf( '/centre/create') !== -1
