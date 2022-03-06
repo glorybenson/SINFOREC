@@ -244,8 +244,8 @@
             dropdown.append( $( '<option>--</option>'));
             filler.forEach( function ( each, index) {
                 const option = $( '<option/>');
-                // if( index === 0)
-                //     option.attr( 'selected', 'true');
+               //  if( index === 0)
+               //      option.attr( 'selected', 'true');
                 option.attr( 'value', each[ 'id']);
                 option.html( each[ 'description']);
                 dropdown.append( option);

@@ -47,7 +47,7 @@ class PasswordReset extends Notification
         return (new MailMessage)
             ->subject('Demande de réinitialisation de votre mot de passe')
             ->markdown('email.reset', [
-                'url' => url('password/reset', $this->token . '?email=' . $this->email),
+                'url' => url('password/reset/'. $this->token . '?email=' . $this->email),
                 'first_name' => $this->first_name,
                 'last_name' => $this->last_name,
                 'email' => $this->email
