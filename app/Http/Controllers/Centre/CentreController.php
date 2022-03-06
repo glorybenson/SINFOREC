@@ -78,8 +78,16 @@ class CentreController extends Controller
      */
     public function show($id)
     {
-        $centre = Centre::find($id);
-        return view('centre.show', ['centre' => $centre]);
+        $shell = new \stdClass();
+        $binding = Util::load( $shell);
+
+        $binding[ 'centre'] = DB::select( 'SELECT centre.id, centre.description, communes.description as communes, department.description as departments,
+                                      regions.description as regions, arrondissement.description as arrondissements, communes.id as commune_id FROM communes
+                                      INNER JOIN centre ON centre.communes=communes.id INNER JOIN department ON centre.departments=department.id
+                                      INNER JOIN regions ON centre.regions=regions.id INNER JOIN arrondissement ON centre.arrondissements=arrondissement.id'
+                                      . ' WHERE centre.id=?', [$id])[ 0];
+
+        return view('centre.show', $binding);
     }
 
     /**
@@ -91,7 +99,9 @@ class CentreController extends Controller
     public function edit($id)
     {
         $shell = new \stdClass();
-        $binding = $this->load( $shell);
+        $binding = Util::load( $shell);
+
+        $binding[ 'editingCentre'] = Centre::find( $id);
 
         return view('centre.edit', $binding);
     }

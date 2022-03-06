@@ -470,8 +470,9 @@
                                             <label for="judgement-judgement">Jugement</label>
                                             <select id="judgement-judgement" data-live-search="true" name="judgement-judgement" class="selectpicker w-100 serializable" tabindex="1" data-parsley-errors-container="#invalid-feedback40" required>
                                                 <option value="" selected>---</option>
-                                                <option value="Oui">Oui</option>
-                                                <option value="Non">Non</option>
+                                                <option value="Non">Oui</option>
+                                                <option value="Oui">Non</option>
+                                                
                                             </select>
                                             <span class="feedback-new" id="invalid-feedback40" role="alert"></span>
                                         </div>

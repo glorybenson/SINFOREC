@@ -27,8 +27,8 @@
                         <div class="table-responsive">
                             <table class="table mb-0 table-striped border-0 data-table" id="datatable">
                                 <thead class="thead-light">
-                                    <th>Pays</th>
                                     <th>La description</th>
+                                    <th>Pays</th>
                                     <th>Créé par</th>
                                     <th>Créé sur</th>
                                     <th>Action</th>
@@ -36,7 +36,7 @@
                                         @foreach ( $regions as $item)
                                             <tr>
                                                 <td>{{ $item->description }}</td>
-                                                <td>{{ \App\Models\Region::find( $item->pay_id)->description }}</td>
+                                                <td>{{ \App\Models\Pay::find( $item->pay_id)->description }}</td>
                                                 <td>
                                                     {{ \App\Models\User::find( $item->created_by)->first_name }}
                                                 </td>

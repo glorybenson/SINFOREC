@@ -26,7 +26,7 @@
                                     <h4 class="card-title float-left">
                                         {{ $department_description }}</h4>
                                     <div class="text-right">
-                                        <a href="{{ route('arrondissement.index') }}" class="btn btn-dark px-3">
+                                        <a href="{{ route('arrondissement') }}" class="btn btn-dark px-3">
                                             Retour arrondissement</a>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                             <div class="col-md-7">
                                                 {{ $department_description }}
                                             </div>
-                                        </div>department
+                                        </div>
                                     </div>
                                 </div>
                             </div>
